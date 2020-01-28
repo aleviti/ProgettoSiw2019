@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body class="landing">
+<div class="form">
+    <div class="tab-content" style='margin-top: -10px'>
+        <div id="signup">
+            <h1>Login</h1>
+            <form th:action="@{/login}" method="post" th:object="${azienda}">
+                <table>
+                        <tr>
+                            <td>Username</td>
+                        <td><input type='text' name='username' placeholder="Username" th:field="*{username}"/>
+                        <font size="3"
+                              color="red"><span th:text="${error}"/></font> </td>
+                        </tr>
+                        <tr> <td>Password</td>  <td><input type='password' name='password'
+                                                         placeholder="Password" th:field="*{password}"/></td>
+                        </tr>
+                    <tr>
+                    <td><button type="submit" class="button button-block"
+                            style='cursor: pointer'>Invia
+                    </button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+        <div id="login"></div>
+    </div>
+    <!-- tab-content -->
+</div>
+<!-- /form -->
+
+
+</body>
+</html>

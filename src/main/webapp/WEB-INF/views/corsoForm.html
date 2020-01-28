@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h4 class="title">Inserisci un nuovo corso</h4>
+</div>
+<form th:action="@{/addCorso}" method="POST" th:object="${corso}">
+    <table>
+
+        <tr>
+            <td>Nome corso:</td>
+            <td><input type="text" th:field="*{nome}" /></td>
+
+        </tr>
+
+        <tr>
+            <td>Orario:</td>
+            <td><input type="text" th:field="*{orario}" /></td>
+
+        </tr>
+        <tr>
+            <td>Data di inizio:</td>
+            <td><input type="date" name="dataInizio" th:field="*{dataInizio}" /></td>
+
+        </tr>
+
+        <tr>
+            <td>Data di fine:</td>
+            <td><input type="date" name="dataFine" th:field="*{dataFine}" /></td>
+        </tr>
+        <tr>
+            <td>Giorni:</td>
+            <td><input type="text" th:field="*{giorni}" /></td>
+        </tr>
+        <tr>
+        <td>Simbolo</td>
+       <td> <select th:field="*{docente}">
+            <option th:each="key : ${docenti}"
+                    th:value="${key.id}"
+                    th:utext="${key.cognome}"/>
+        </select>
+       </td>
+        </tr>
+        <tr>
+            <td><button type="submit">Inserisci</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

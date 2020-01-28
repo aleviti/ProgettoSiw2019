@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h2 align="center">Benvenuti nell'area riservata all'azienda</h2>
+    <table>
+        <tr>
+            <th>Funzionalità di registrazione di una nuova segreteria</th>
+        </tr>
+        <tr>
+            <td><a  id="registraSegreteria" onclick="myFunction()" th:href="@{/resistrazioneSegreteria}">Registra segreteria</a></td>
+        </tr>
+    </table>
+
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
+</body>
+</html>

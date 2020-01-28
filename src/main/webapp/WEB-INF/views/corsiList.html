@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Lista Corsi:</title>
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<div>
+		<h4>Lista corsi':</h4>
+		<div>
+			<table>
+				<tr>
+					<th>Nome:</th>
+					<th>Orario:</th>
+					<th>dataInizio:</th>
+					<th>dataFine:</th>
+					<th>Giorni:</th>
+					
+				</tr>
+				<tr th:each="corso : ${corsiList}">
+					<td><span th:text="${corso.nome}"></span></td>
+					 <td><span th:text="${corso.Orario}"></span></td>
+					<td><span th:text="${corso.dataInizio}"></span></td>
+					<td><span th:text="${corso.dataFine}"></span></td>
+                    
+                     <td><span th:text="${corso.Giorni}"></span></td>
+					<td><a th:href="@{'/corso' + '/' + ${corso.id}}"><span>DETTAGLI</span></a></td>
+
+
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
+

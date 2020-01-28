@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="main" href="main.css"> </link>
+<title>Getting Started: Serving Web Content</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body
+	marginheight="10">
+<section>
+	<div align="center">
+		<h2 align="center">Benvenuti nella home page dell azienda
+			di formazione</h2>
+
+		<div> <a th:href = "@{/login}">Login </a> </div>
+
+		<table>
+			<tr>
+				<th>Corsi per Docenti:</th>
+			</tr>
+			<tr>
+				<td><a th:href="@{/corsiList}">Lista dei corsi tenuti </a> </td>
+			</tr>
+			<tr>
+				<td><a th:href="@{/docenti}">Lista dei docenti iscritti</a></td>
+			</tr>
+		</table>
+
+	</div>
+</section>
+</body>
+</html>

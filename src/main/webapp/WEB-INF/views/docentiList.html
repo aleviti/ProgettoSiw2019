@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Docenti</title>
+<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<div>
+		<h4>Lista docenti:</h4>
+		<div>
+			<table>
+				<tr>
+					<th>Nome:</th>
+					<th>Cognome:</th>
+					
+				</tr>
+				<tr th:each="docente : ${docenti}">
+					<td><span th:text="${docente.nome}"></span></td>
+					<td><span th:text="${docente.cognome}"></span></td>
+					
+
+					<td><a th:href="@{'/docente' + '/' + ${docente.id}}"><span>DETTAGLI</span></a></td>
+
+
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
